@@ -1,0 +1,36 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.Import"%>
+<%@page import="java.io.UTFDataFormatException"%>
+<%@page import="org.apache.tomcat.util.buf.Utf8Decoder"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	int kor = Integer.parseInt(request.getParameter("kor"));
+	int eng = Integer.parseInt(request.getParameter("eng"));
+	int math = Integer.parseInt(request.getParameter("math"));
+	float tot = eng + kor + math;
+	float avg = tot / 3;
+
+	String.format("%.2f", avg);
+	%>
+	국어:<%=kor%>
+	<br> 
+	영어:<%=eng%>
+	<br> 
+	수학:<%=math%>
+	<br> 
+	총점:<%=tot%>
+	<br> 
+	평균:<%=avg%>
+	<br>
+
+
+
+</body>
+</html>
